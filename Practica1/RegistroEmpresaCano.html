@@ -66,7 +66,7 @@
                             <option value="otro">Otro</option>
                         </select>
                         <input type="text" class="form-control" id="telefono" required maxlength="10">
-                        <div class="invalid-feedback" id="telefonoError">El número debe tener exactamente 10 dígitos y solo contener números.</div>
+                        <div class="invalid-feedback" id="telefonoError">El número debe contener números.</div>
                     </div>
                     <div class="mb-3" id="ladaOtroContainer" style="display: none;">
                         <label for="ladaOtro" class="form-label">Especifique la LADA</label>
@@ -174,7 +174,7 @@
         document.getElementById("telefono").addEventListener("input", function() {
             const telefono = this.value;
             const errorDiv = document.getElementById("telefonoError");
-            const regex = /^[0-9]{10}$/; 
+            const regex = /^[0-9]$/; 
             if (!regex.test(telefono)) {
                 errorDiv.style.display = "block";
                 this.classList.add("is-invalid");
